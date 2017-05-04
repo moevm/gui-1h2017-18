@@ -1,1 +1,6 @@
-Солнце
+Sun
+is the only star in the solar system.
+Other objects of this system are turning around the Sun: planets and their satellites,
+dwarf planets and their satellites, asteroids, meteoroids, comets and cosmic dust.
+
+1.9885 В· 1030 kg

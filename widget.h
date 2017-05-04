@@ -2,10 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
-
-namespace Ui {
-class Widget;
-}
+#include "QTextEdit"
 
 class Widget : public QWidget
 {
@@ -13,13 +10,9 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget *parent = 0);
-    ~Widget();
-
-//private slots:
-  //  void on_pushButton_clicked();
-
 private:
-    Ui::Widget *ui;
+    QTextEdit *TextEdid;
+
 };
 
 #endif // WIDGET_H

@@ -1,1 +1,6 @@
-Земля
+Earth
+is the third planet from the Sun.
+Fifth in size among all the planets of the solar system.
+It is also the largest in diameter, mass and density among the terrestrial planets.
+
+5.9726 В· 1024 kg

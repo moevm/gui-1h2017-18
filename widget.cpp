@@ -1,50 +1,36 @@
 #include "widget.h"
-#include "ui_widget.h"
 #include "QTextEdit"
 #include "QVBoxLayout"
 #include "QHBoxLayout"
 #include "QFile"
 #include "QTextCodec"
+#include "QDebug"
+#include "planetwidget.h"
 
 Widget::Widget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Widget)
+    QWidget(parent)
 {
-    QTextEdit *TextEdid = new QTextEdit;
+    TextEdid = new QTextEdit;
+    TextEdid->setReadOnly(true);
     QVBoxLayout *layout = new QVBoxLayout;
     QHBoxLayout *QV = new QHBoxLayout;
     layout->addLayout(QV);
     for (int i=1;i<10;i++){
-    QString Q(":/");
-    QString num = QString::number(i);
-    QString W(".png");
-    QVBoxLayout *QVV = new QVBoxLayout;
-    QV->addLayout(QVV);
-    QLabel *label = new QLabel;
-    label->setPixmap(QPixmap(Q+num+W));
-    label->setScaledContents(true);
-    QVV->addWidget(label);
-    QPushButton *button = new QPushButton("Инфо");
-    QVV->addWidget(button);}
-    QTextCodec *c = QTextCodec::codecForName("CP1251");
-    QFile file (":/1.txt");
-    file.open(QFile::ReadOnly);
-    QByteArray data = file.readAll();
-    QString string = c->toUnicode(data);
-    TextEdid->setText(string);
+        QString Q(":/");
+        QString num = QString::number(i);
+        QString W(".png");
+
+        QString ext(".txt");
+        QTextCodec *c = QTextCodec::codecForName("CP1251");
+        QFile file (Q+num+ext);
+        file.open(QFile::ReadOnly);
+        QByteArray data = file.readAll();
+        QString string = c->toUnicode(data);
+
+        PlanetWidget *planet = new PlanetWidget(this, Q+num+W, string, TextEdid);
+        QV->addWidget(planet);
+    }
+
     layout->addWidget(TextEdid);
     this->setLayout(layout);
-
-    //ui->setupUi(this);
 }
-
-Widget::~Widget()
-{
-    delete ui;
-}
-
-
-//void Widget::on_pushButton_clicked()
-//{
-//ui->textEdit->setText("hi");
-//}

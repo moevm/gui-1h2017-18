@@ -24,11 +24,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        widget.cpp
+        widget.cpp \
+    planetwidget.cpp
 
-HEADERS  += widget.h
+HEADERS  += widget.h \
+    planetwidget.h
 
-FORMS    += widget.ui
+FORMS    +=
 
 RESOURCES += \
     res.qrc
