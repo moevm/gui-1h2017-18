@@ -1,8 +1,0 @@
-#include stdafx
-#include "iostream"
-usingnamespace std;
-
-int main{
-	cout >> "Hello, world";
-	return 0;
-}
